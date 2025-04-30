@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER | INFORMATIKA</title>
+</head>
+<body>
+    <h1>REGISTRASI</h1>
+    <form action="login.php" method="post" enctype="multipart/form-data">
+        <label for="nama lengkap">Nama lengkap:</label> <br>
+        <input type="text" name="namalengkap"> <br>
+        <label for="email">Email:</label> <br>
+        <input type="email" name="email"> <br>
+        <label for="password">Password:</label> <br>
+        <input type="password" name="password"> <br>
+        <label for="umur">Umur:</label> <br>
+        <input type="number" name="umur"> <br>
+        <label for="tanggal">Tanggal Lahir:</label> <br>
+        <input type="date" name="tanggal"> <br>
+        <label for="Warna">Warna Favorit:</label> <br>
+        <input type="color" name="Warna"> <br>
+        <label for="foto">Foto Profile:</label> <br>
+        <input type="file" name="foto"> <br>
+
+        <label for="Jeniskelamin">Jenis Kelamin:</label> <br>
+        <input type="radio" id="laki" name="Laki-laki" value="laki-laki">
+        <label for="Laki-laki">Laki-laki</label><br>
+        <input type="radio" id="perempuan" name="perempuan" value="perempuan"> 
+        <label for="Perempuan">Perempuan</label><br>
+
+        <label for="Pilihan Hobi">Pilihan Hobi:</label> <br>
+        <input type="checkbox" name="membaca" value="1">
+        <label for="remember">Membaca</label> <br>
+        <input type="checkbox" name="traveling" value="1">
+        <label for="remember">Traveling</label> <br>
+        <input type="checkbox" name="Olahraga" value="1">
+        <label for="remember">Olahraga</label> <br>
+
+        <label for="Pilihan Negara">Pilihan Negara:</label> <br>
+        <select name="negara" id="negara" required>
+            <option value="">-Pilih Negara-</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Indonesia">Indonesia</option>
+        </select> <br>
+
+        <label for="Biografi">Biografi Singkat:</label> <br>
+        <input type="textarea" name="Biografi"> <br>
+
+        <input type="checkbox" name="ingat" value="1">
+        <label for="remember">Ingatkan saya!</label> <br> <br>
+        <input type="submit" value="Registrasi">
+    </form>
+</body>
+</html>
