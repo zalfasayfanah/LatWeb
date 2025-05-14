@@ -1,0 +1,53 @@
+body {
+    background-color: beige;
+}
+
+div {
+    border: 1px solid #72523c;
+    height: 300px;
+
+    /*margin-top: 20px;*/
+    background-color: rgb(92, 64, 31);
+
+}
+
+.rumah  {
+    height: 700px;
+}
+
+.container-teras {
+    background-color: rgb(227, 34, 124);
+    display: flex;
+    /*gap: 20px; /* Jarak antara taman dan kolam */
+}
+
+.taman {
+    background-color: rgb(34, 227, 114);
+    width: 600px;
+    /*height: 300px; /* Tambahkan tinggi jika belum ada */
+}
+
+.kolam {
+    background-color: rgb(32, 96, 184);
+    width: 60%;
+    
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+
+}
+
+.parkiran{
+    background-color: grey;
+    width: 100%; 
+}
+.rak{
+    background-color: rgb(163, 9, 9);
+    width: 100%; 
+}
+
+img {
+    position: relative;
+    top: 20%;
+    width: 100%;
+}

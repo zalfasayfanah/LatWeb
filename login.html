@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN | INFORMATIKA</title>
     <style>
+        /* ...CSS tetap sama seperti yang Anda buat... */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f0e6;
@@ -99,12 +100,12 @@
 <body>
     <div class="login-container">
         <h1>LOGIN</h1>
-        <form action="login.php" method="post" enctype="multipart/form-data">
+        <form id="loginForm" action="login.php" method="post" enctype="multipart/form-data">
             <label for="email">Email:</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" id="email" required>
 
             <label for="password">Password:</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" id="password" required>
 
             <div class="remember">
                 <input type="checkbox" name="ingat" value="1" id="remember">
@@ -115,5 +116,33 @@
         </form>
         <p>Belum punya akun? <a href="register.html">Daftar</a></p>
     </div>
+
+    <script>
+        // Ambil elemen form login berdasarkan ID
+        const form = document.getElementById('loginForm');
+
+        // Tambahkan event listener saat form disubmit
+        form.addEventListener('submit', function (event) {
+            // Ambil nilai email dan password dari input
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validasi email tidak boleh kosong dan harus mengandung '@'
+            if (!email || !email.includes('@')) {
+                alert('Masukkan email yang valid!');
+                event.preventDefault(); // Mencegah form terkirim
+                return;
+            }
+
+            // Validasi password minimal 6 karakter
+            if (password.length < 6) {
+                alert('Password minimal 6 karakter!');
+                event.preventDefault(); // Mencegah form terkirim
+                return;
+            }
+
+            // Jika validasi lolos, form akan terkirim
+        });
+    </script>
 </body>
 </html>
