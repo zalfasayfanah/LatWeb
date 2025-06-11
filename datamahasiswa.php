@@ -4,31 +4,27 @@
 
     //echo $nama;
     //mysqli_connect("localhost","username","password","nama database")
-    $koneksi = mysqli_connect("localhost:3307","root","","latweb");
-
-    if(!$koneksi)
-    {
-        die("Koneksi Gagal!".mysqli_connect_error());
-    }
-    else
-    {
-        echo "Koneksi Berhasil !";
-    }
+    require 'function.php';
 
     $query = "SELECT * FROM mahasiswa";
-    $result = mysqli_query($koneksi, $query); //hasilnya berupa objek, 
+
+    $rows = query($query); //hasilya wadah2 dengan isi sesuai bagiannya
+ 
 
     //echo $result; -> tidak bisa menampilkan objek
     //var_dump($result);
 
     //ambil data (fetch) dari result
     // ada 4 cara:
-    // 1. mysqli_fetch_row()
+    // 1. mysqli_fetch_row() 'numeric'
     // 2. mysqli_fetch_assoc()
     // 3. mysqli_fetch_array()
     // 4. mysqli_fetch_object()
-    $mhs = mysqli_fetch_row($result);
-    var_dump($mhs);
+    //while ($mhs = mysqli_fetch_assoc($result))
+    //{
+    //   var_dump($mhs["nama"]);
+    //}
+    
 ?>
 
 <!DOCTYPE html>
@@ -145,12 +141,25 @@
     <table border="1" cellspacing="0" cellpading="10">
         <tr>
             <th>No</th>
+            <th>Foto</th>
             <th>Nama</th>
             <th>NIM</th>
             <th>Jurusan</th>
             <th>No.HP</th>
         </tr>
-
+        <?php 
+        $i = 1;
+        //while ($mhs = mysqli_fetch_assoc($result))
+        foreach ($rows as $mhs){ ?>
+        <tr>
+            <td><?= $i ?></td>
+            <td><img src="image/<?= $mhs['foto'] ?>" width="80"></td>
+            <td><?php echo $mhs["nama"]?></td>
+            <td><?= $mhs["nim"]?></td>
+            <td><?= $mhs["jurusan"]?></td>
+            <td><?= $mhs["nohp"]?></td>
+        </tr>
+        <?php $i++;} ?>
     </table>
 
     <footer>
